@@ -1,0 +1,62 @@
+.SelectWrapper {
+  /* width: 100%; */
+  display: grid;
+  gap: 0.3rem;
+}
+
+.SelectInputRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.SelectElementMain {
+  border: 1px solid #aeaeae;
+  width: 90%;
+}
+
+.SelectElementValue {
+  padding: .2rem .5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.SelectElementValue.SelectElementPlaceholder {
+  color: #808080;
+}
+
+.SelectOptionsWrapper {
+  color: #808080;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.SelectOptionsWrapper .SelectOption {
+  padding: 0 1rem;
+  line-height: 2rem;
+}
+
+.SelectOptionsWrapper .SelectOption:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.SelectArrow {
+  transition: all 400ms;
+}
+
+.SelectArrow.SelectArrowShowOptions {
+  transform: rotate(180deg);
+}
+
+.FrameworkLogo {
+}
+
+.FrameworkIcon {
+  height: 2rem;
+  width: 2rem;
+}
+

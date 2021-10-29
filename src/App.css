@@ -1,0 +1,46 @@
+
+* {
+  cursor: default;
+  font-size: 16px;
+}
+
+.App {
+  padding: 4rem 0;
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.Input {
+  padding: .2rem .5rem;
+  border: 1px solid #aeaeae;
+}
+
+.Inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Dropzone {
+  width: 400px;
+  color: #808080;
+  padding: 2rem;
+  background-color: whitesmoke;
+  border: 1px solid #aeaeae;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+ font-size: small;
+ font-weight: bold;
+ color: white;
+ background-color: black;
+ border: none;
+ padding: .5rem 2rem;
+ justify-self: center;
+}
