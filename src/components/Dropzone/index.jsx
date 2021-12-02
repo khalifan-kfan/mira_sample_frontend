@@ -8,7 +8,7 @@ const Dropzone = ({ handleDrop }) => {
     getRootProps,
     getInputProps
   } = useDropzone({
-    // accept: 'image/*',
+    accept: '.zip',
     onDrop: acceptedFiles => {
       handleDrop(acceptedFiles);
       setFiles(acceptedFiles.map(file => Object.assign(file, {
