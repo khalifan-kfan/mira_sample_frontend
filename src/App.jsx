@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Dropdown from "./components/Dropdown";
 import Dropzone from "./components/Dropzone";
+import Spinner from "./components/Spinner";
 import Input from "./components/Input";
+
 import "./App.css";
 
 const App = () => {
@@ -14,6 +16,7 @@ const App = () => {
   });
   const [token, setToken] = useState("");
   const [project, setProject] = useState("");
+  const [loading, setLoader] = useState(false);
 
   const getPathName = (path) => {
     let filePath = path.replaceAll("/", "|").replace("|", "");
@@ -42,6 +45,7 @@ const App = () => {
   };
 
   const handleSubmit = () => {
+    setLoader(true);
     const formData = new FormData();
     const { name, version } = image;
 
@@ -57,7 +61,17 @@ const App = () => {
     formData.append("token", token);
     formData.append("project", project);
 
-    axios.post("http://localhost:5000/containerize", formData).then().catch();
+    axios.post("http://localhost:5000/containerize", formData).
+     then(function ({data}) {
+       if(data){
+        setLoader(false);
+       }
+     })
+    .catch(function (error) {
+      setLoader(false);
+      resolve(error);
+     });;
+    
   };
 
   return (
@@ -105,7 +119,16 @@ const App = () => {
       <div className="Dropzone">
         <Dropzone handleDrop={(files) => setFiles(files)} />
       </div>
-      <button onClick={handleSubmit}>DEPLOY</button>
+      {
+        loading == false ?
+        <button onClick={handleSubmit}>
+         DEPLOY
+        </button>
+        :
+        <div className="Spinner">
+          <Spinner />
+        </div>
+      }
     </div>
   );
 };
