@@ -61,8 +61,8 @@ const App = () => {
     formData.append("token", token);
     formData.append("project", project);
 
-    axios.post("https://staging-mira.cranecloud.io/containerize", formData).
-     then(function ({data}) {
+    axios.post("http://102.134.147.245:5000/containerize", formData).
+     then(function({data}) {
        if(data){
         setLoader(false);
        }
