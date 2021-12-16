@@ -115,7 +115,7 @@ const App = () => {
         />
       </div>
       <div>Please zip your project folder and upload only the zip file</div>
-      <div>Avoid including build files in your zip file eg node_modules</div>
+      <div>Avoid including build files in your zip file eg node_modules.</div>
       <div className="Dropzone">
         <Dropzone handleDrop={(files) => setFiles(files)} />
       </div>
