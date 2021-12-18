@@ -61,16 +61,17 @@ const App = () => {
     formData.append("token", token);
     formData.append("project", project);
 
-    axios.post("http://localhost:5000/containerize", formData).
+    axios.post("http://102.134.147.245:5000/containerize", formData).
      then(function ({data}) {
        if(data){
         setLoader(false);
+        alert("successfull, check crane cloud front end");
        }
      })
     .catch(function (error) {
       setLoader(false);
-      resolve(error);
-     });;
+      alert(error);
+     });
     
   };
 
