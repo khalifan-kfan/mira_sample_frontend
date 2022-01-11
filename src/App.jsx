@@ -67,7 +67,7 @@ const App = () => {
     formData.append("project", project);
     formData.append("registry", registry);
 
-    axios.post("http://102.134.147.245:5000/containerize", formData).
+    axios.post("http://127.0.0.1:5000/containerize", formData).
      then(function ({data}) {
        if(data){
         setLoader(false);
@@ -91,11 +91,11 @@ const App = () => {
           onChange={handleDropdownChange}
         />
       </div>
-      <div className="FrameWorkInput">
+      <div className="RegistryInput">
         <Dropdown
           required
-          name="repository"
-          placeholder="Repository"
+          name="registry"
+          placeholder="Registry"
           options={["Dockerhub", "Harbor"]}
           onChange={handleRegistryDropdownChange}
         />
