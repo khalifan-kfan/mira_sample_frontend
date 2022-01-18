@@ -67,16 +67,18 @@ const App = () => {
     formData.append("project", project);
     formData.append("registry", registry);
 
-    axios.post("http://127.0.0.1:5000/containerize", formData).
+    axios.post("http://102.134.147.245:5000/containerize", formData).
+
      then(function ({data}) {
        if(data){
         setLoader(false);
+        alert("successfull, check crane cloud front end");
        }
      })
     .catch(function (error) {
       setLoader(false);
-      resolve(error);
-     });;
+      alert(error);
+     });
     
   };
 
