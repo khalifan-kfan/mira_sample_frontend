@@ -5,6 +5,7 @@ import { ReactComponent as StackIcon } from "../../assets/img/stack.svg";
 import { ReactComponent as HtmlIcon } from "../../assets/img/html.svg";
 import { ReactComponent as ReactIcon } from "../../assets/img/react.svg";
 import { ReactComponent as NodeIcon } from "../../assets/img/nodejs.svg";
+import { ReactComponent as FlaskIcon } from "../../assets/img/flask.svg";
 import styles from "./Dropdown.module.css";
 
 const Dropdown = ({ required, name, placeholder, options, onChange }) => {
@@ -69,6 +70,7 @@ const Dropdown = ({ required, name, placeholder, options, onChange }) => {
           {selected === 'Html-CSS-JS' && <HtmlIcon className={styles.FrameworkIcon} />}
           {selected === 'React' && <ReactIcon className={styles.FrameworkIcon} />}
           {selected === 'NodeJS' && <NodeIcon className={styles.FrameworkIcon} />}
+          {selected === 'Flask' && <FlaskIcon className={styles.FrameworkIcon} />}
         </div>
       </div>
       {showOptions && (

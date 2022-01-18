@@ -10,6 +10,7 @@ import "./App.css";
 const App = () => {
   const [files, setFiles] = useState([]);
   const [framework, setFramework] = useState("");
+  const [registry, setRegistry] = useState("");
   const [image, setImage] = useState({
     name: "",
     version: "",
@@ -44,6 +45,10 @@ const App = () => {
     setFramework(selected);
   };
 
+  const handleRegistryDropdownChange = (selected) => {
+    setRegistry(selected);
+  };
+
   const handleSubmit = () => {
     setLoader(true);
     const formData = new FormData();
@@ -60,8 +65,10 @@ const App = () => {
     formData.append("framework", framework);
     formData.append("token", token);
     formData.append("project", project);
+    formData.append("registry", registry);
 
     axios.post("http://102.134.147.245:5000/containerize", formData).
+
      then(function ({data}) {
        if(data){
         setLoader(false);
@@ -82,8 +89,17 @@ const App = () => {
           required
           name="framework"
           placeholder="Framework"
-          options={["Html-CSS-JS", "React", "NodeJS"]}
+          options={["Html-CSS-JS", "React", "NodeJS", "Flask"]}
           onChange={handleDropdownChange}
+        />
+      </div>
+      <div className="RegistryInput">
+        <Dropdown
+          required
+          name="registry"
+          placeholder="Registry"
+          options={["Dockerhub", "Harbor"]}
+          onChange={handleRegistryDropdownChange}
         />
       </div>
       <div className="Inputs">
