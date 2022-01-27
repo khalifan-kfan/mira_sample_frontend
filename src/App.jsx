@@ -67,7 +67,7 @@ const App = () => {
     formData.append("project", project);
     formData.append("registry", registry);
 
-    axios.post("http://102.134.147.245:5000/containerize", formData).
+    axios.post("http://localhost:5000/containerize", formData).
 
      then(function ({data}) {
        if(data){
@@ -89,7 +89,7 @@ const App = () => {
           required
           name="framework"
           placeholder="Framework"
-          options={["Html-CSS-JS", "React", "NodeJS", "Flask"]}
+          options={["Html-CSS-JS", "React", "NodeJS", "Flask", "Django"]}
           onChange={handleDropdownChange}
         />
       </div>
