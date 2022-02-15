@@ -67,7 +67,7 @@ const App = () => {
     formData.append("project", project);
     formData.append("registry", registry);
 
-    axios.post("http://localhost:5000/containerize", formData).
+    axios.post("http://102.134.147.245:5000/containerize", formData).
 
      then(function ({data}) {
        if(data){
@@ -93,6 +93,7 @@ const App = () => {
           onChange={handleDropdownChange}
         />
       </div>
+      <div>If deploying a Django app also see these additional pre-deployment <a href="https://docs.google.com/document/d/1-zqaLC4x4yZflRS-LMhycVbhpCEvyId0smaqAwC5TBE/edit?usp=sharing">instructions</a> </div>
       <div className="RegistryInput">
         <Dropdown
           required
