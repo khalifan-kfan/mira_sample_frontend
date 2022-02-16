@@ -89,10 +89,11 @@ const App = () => {
           required
           name="framework"
           placeholder="Framework"
-          options={["Html-CSS-JS", "React", "NodeJS", "Flask"]}
+          options={["Html-CSS-JS", "React", "NodeJS", "Flask", "Django"]}
           onChange={handleDropdownChange}
         />
       </div>
+      <div>If deploying a Django app also see these additional pre-deployment <a href="https://docs.google.com/document/d/1-zqaLC4x4yZflRS-LMhycVbhpCEvyId0smaqAwC5TBE/edit?usp=sharing">instructions</a> </div>
       <div className="RegistryInput">
         <Dropdown
           required
