@@ -89,7 +89,7 @@ const App = () => {
           required
           name="framework"
           placeholder="Framework"
-          options={["Html-CSS-JS", "React", "NodeJS", "Flask", "Django"]}
+          options={["Html-CSS-JS", "React", "NodeJS", "Flask", "Django", "Laravel"]}
           onChange={handleDropdownChange}
         />
       </div>
