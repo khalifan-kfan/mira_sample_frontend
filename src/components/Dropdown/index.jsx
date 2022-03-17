@@ -75,6 +75,7 @@ const Dropdown = ({ required, name, placeholder, options, onChange }) => {
           {selected === 'Flask' && <FlaskIcon className={styles.FrameworkIcon} />}
           {selected === 'Django' && <DjangoIcon className={styles.FrameworkIcon} />}
           {selected === 'Laravel' && <LaravelIcon className={styles.FrameworkIcon} />}
+          {selected === 'Laravel-custom' && <LaravelIcon className={styles.FrameworkIcon} />}
         </div>
       </div>
       {showOptions && (

@@ -67,7 +67,7 @@ const App = () => {
     formData.append("project", project);
     formData.append("registry", registry);
 
-    axios.post("http://102.134.147.245:5000/containerize", formData).
+    axios.post("http://localhost:5000/containerize", formData).
 
      then(function ({data}) {
        if(data){
@@ -89,7 +89,7 @@ const App = () => {
           required
           name="framework"
           placeholder="Framework"
-          options={["Html-CSS-JS", "React", "NodeJS", "Flask", "Django", "Laravel"]}
+          options={["Html-CSS-JS", "React", "NodeJS", "Flask", "Django", "Laravel", "Laravel-custom"]}
           onChange={handleDropdownChange}
         />
       </div>
@@ -97,8 +97,8 @@ const App = () => {
        <div>If deploying a Django app also see these additional pre-deployment
          <a href="https://docs.google.com/document/d/1-zqaLC4x4yZflRS-LMhycVbhpCEvyId0smaqAwC5TBE/edit?usp=sharing">
            instructions</a> </div>}
-           { framework =="Laravel"  &&
-       <div>Please make sure your project has a dockerfile added in the root of your Laravel app<br></br>
+           { framework =="Laravel-custom"  &&
+       <div>Please make sure your project has a custom dockerfile added in the root of your Laravel app<br></br>
          <a href="https://medium.com/cranecloud/dockerizing-a-laravel-application-36b5ccd23691">
            Take an example</a> <br></br> Be sure to use your current version of laravel in your dockerfile </div>  }
       <div className="RegistryInput">
