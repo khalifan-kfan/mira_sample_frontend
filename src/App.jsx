@@ -93,7 +93,14 @@ const App = () => {
           onChange={handleDropdownChange}
         />
       </div>
-      <div>If deploying a Django app also see these additional pre-deployment <a href="https://docs.google.com/document/d/1-zqaLC4x4yZflRS-LMhycVbhpCEvyId0smaqAwC5TBE/edit?usp=sharing">instructions</a> </div>
+      { framework == "Django" &&
+       <div>If deploying a Django app also see these additional pre-deployment
+         <a href="https://docs.google.com/document/d/1-zqaLC4x4yZflRS-LMhycVbhpCEvyId0smaqAwC5TBE/edit?usp=sharing">
+           instructions</a> </div>}
+           { framework =="Laravel"  &&
+       <div>Please make sure your project has a dockerfile added in the root of your Laravel app<br></br>
+         <a href="https://medium.com/cranecloud/dockerizing-a-laravel-application-36b5ccd23691">
+           Take an example</a> <br></br> Be sure to use your current version of laravel in your dockerfile </div>  }
       <div className="RegistryInput">
         <Dropdown
           required
