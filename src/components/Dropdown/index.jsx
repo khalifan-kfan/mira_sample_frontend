@@ -8,6 +8,7 @@ import { ReactComponent as NodeIcon } from "../../assets/img/nodejs.svg";
 import { ReactComponent as FlaskIcon } from "../../assets/img/flask.svg";
 import { ReactComponent as DjangoIcon } from "../../assets/img/django.svg";
 import styles from "./Dropdown.module.css";
+import { ReactComponent as LaravelIcon } from "../../assets/img/laravel.svg";
 
 const Dropdown = ({ required, name, placeholder, options, onChange }) => {
   const [showOptions, setShowOptions] = useState(false);
@@ -73,6 +74,8 @@ const Dropdown = ({ required, name, placeholder, options, onChange }) => {
           {selected === 'NodeJS' && <NodeIcon className={styles.FrameworkIcon} />}
           {selected === 'Flask' && <FlaskIcon className={styles.FrameworkIcon} />}
           {selected === 'Django' && <DjangoIcon className={styles.FrameworkIcon} />}
+          {selected === 'Laravel' && <LaravelIcon className={styles.FrameworkIcon} />}
+          {selected === 'Laravel-custom' && <LaravelIcon className={styles.FrameworkIcon} />}
         </div>
       </div>
       {showOptions && (
