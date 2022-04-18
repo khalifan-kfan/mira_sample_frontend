@@ -9,14 +9,14 @@ import "./App.css";
 
 const App = () => {
   const [files, setFiles] = useState([]);
-  const [framework, setFramework] = useState("");
-  const [registry, setRegistry] = useState("");
+  const [framework, setFramework] = useState("Html-CSS-JS");
+  const [registry, setRegistry] = useState("Dockerhub");
   const [image, setImage] = useState({
-    name: "",
-    version: "",
+    name: "myapp",
+    version: "01",
   });
-  const [token, setToken] = useState("");
-  const [project, setProject] = useState("");
+  const [token, setToken] = useState("aytdxuendndsdrewe*********");
+  const [project, setProject] = useState("id-039-9384-cdssa");
   const [loading, setLoader] = useState(false);
 
   const getPathName = (path) => {
@@ -84,14 +84,17 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="InputWithLebel">
+      <label className="label">Framework</label>
       <div className="FrameWorkInput">
         <Dropdown
           required
-          name="framework"
+          name="eg. React"
           placeholder="Framework"
           options={["Html-CSS-JS", "React", "NodeJS", "Flask", "Django", "Laravel", "Laravel-custom"]}
           onChange={handleDropdownChange}
         />
+      </div>
       </div>
       { framework == "Django" &&
        <div>If deploying a Django app also see these additional pre-deployment
@@ -101,37 +104,51 @@ const App = () => {
        <div>Please make sure your project has a custom dockerfile added in the root of your Laravel app<br></br>
          <a href="https://medium.com/cranecloud/dockerizing-a-laravel-application-36b5ccd23691">
            Take an example</a> <br></br> Be sure to use your current version of laravel in your dockerfile </div>  }
+      <div className="InputWithLebel">
+      <label className="label">Registry</label>
       <div className="RegistryInput">
         <Dropdown
           required
           name="registry"
-          placeholder="Registry"
+          placeholder="DockerHub"
           options={["Dockerhub", "Harbor"]}
           onChange={handleRegistryDropdownChange}
         />
       </div>
+      </div>
       <div className="Inputs">
+      <div className="InputWithLebel">
+      <label className="label">App/image Name</label>
         <Input
           name="name"
-          placeholder="Image name"
+          placeholder="myapp"
           onChange={handleChange}
           value={image.name}
           required
         />
+        </div>
+      <div className="InputWithLebel">
+      <label className="label">Version/tag</label>
         <Input
           name="version"
-          placeholder="Version"
+          placeholder="01"
           onChange={handleChange}
           value={image.version}
         />
       </div>
+      </div>
       <div className="Inputs">
+      <div className="InputWithLebel">
+      <label className="label">Crane cloud user token</label>
         <Input
           name="token"
-          placeholder="enter token please"
+          placeholder="Paste your token here"
           onChange={handleToken}
           value={token}
         />
+        </div>
+       <div className="InputWithLebel">
+      <label className="label">Crane cloud Project Id</label>
         <Input
           name="project"
           placeholder="crane cloud project"
@@ -139,10 +156,14 @@ const App = () => {
           value={project}
         />
       </div>
+      </div>
       <div>Please zip your project folder and upload only the zip file</div>
       <div>Avoid including build files in your zip file eg node_modules</div>
+      <div className="InputWithLebel">
+      <label className="label">Zip of source code</label>
       <div className="Dropzone">
         <Dropzone handleDrop={(files) => setFiles(files)} />
+      </div>
       </div>
       {
         loading == false ?
